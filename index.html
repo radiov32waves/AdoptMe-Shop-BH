@@ -784,62 +784,146 @@ bloxAccounts.forEach((acc, i) => {
 // ════════════════════════════════════════════════════
 const bloxFruits = [
 
-{ name:"Rocket", rarity:"Common", tags:["Starter","No Demand","Cheap"], price:0.10, details:"Basic starter fruit", img:'https://blox-fruits.fandom.com/wiki/Special:FilePath/Rocket.png', stock:5, inStock:true },
-{ name:"Spin", rarity:"Common", tags:["Low Value","Fun","Beginner"], price:0.15, details:"Simple spinning attacks", img:'https://blox-fruits.fandom.com/wiki/Special:FilePath/Spin.png', stock:5, inStock:true },
-{ name:"Chop", rarity:"Common", tags:["Immunity","Niche","Cheap"], price:0.20, details:"Immune to swords", img:'https://blox-fruits.fandom.com/wiki/Special:FilePath/Chop.png', stock:5, inStock:true },
-{ name:"Spring", rarity:"Common", tags:["Mobility","Fun","Low Demand"], price:0.20, details:"Jump-based mobility fruit", img:'https://blox-fruits.fandom.com/wiki/Special:FilePath/Spring.png', stock:5, inStock:true },
-{ name:"Bomb", rarity:"Common", tags:["AoE","Cheap","Beginner"], price:0.25, details:"Explosion attacks", img:'https://blox-fruits.fandom.com/wiki/Special:FilePath/Bomb.png', stock:5, inStock:true },
-{ name:"Smoke", rarity:"Common", tags:["Logia","Starter","Cheap"], price:0.30, details:"Elemental smoke fruit", img:'https://blox-fruits.fandom.com/wiki/Special:FilePath/Smoke.png', stock:5, inStock:true },
 
-{ name:"Spike", rarity:"Uncommon", tags:["Damage","Low Demand","Basic"], price:0.35, details:"Spike-based attacks", img:'https://blox-fruits.fandom.com/wiki/Special:FilePath/Spike.png', stock:5, inStock:true },
-{ name:"Flame", rarity:"Uncommon", tags:["Logia","Grinding","Starter"], price:0.40, details:"Fire elemental fruit", img:'https://blox-fruits.fandom.com/wiki/Special:FilePath/Flame.png', stock:5, inStock:true },
-{ name:"Falcon", rarity:"Uncommon", tags:["Flight","Mobility","Rare-ish"], price:0.90, details:"Bird transformation fruit", img:'https://blox-fruits.fandom.com/wiki/Special:FilePath/Falcon.png', stock:5, inStock:true },
-{ name:"Ice", rarity:"Uncommon", tags:["Stun","PvP","Beginner"], price:0.50, details:"Freeze enemies", img:'https://blox-fruits.fandom.com/wiki/Special:FilePath/Ice.png', stock:5, inStock:true },
-{ name:"Sand", rarity:"Uncommon", tags:["Logia","PvP","Combo"], price:0.60, details:"Sand control abilities", img:'https://blox-fruits.fandom.com/wiki/Special:FilePath/Sand.png', stock:5, inStock:true },
-{ name:"Dark", rarity:"Uncommon", tags:["Pull","PvP","Combo"], price:0.65, details:"Gravity-like pulls", img:'https://blox-fruits.fandom.com/wiki/Special:FilePath/Dark.png', stock:5, inStock:true },
+{ name:"Ice", rarity:"Rare", tags:["Stun","PvP","Beginner"], price:0.50, details:"Freeze enemies", img:"https://cdn.starpets.gg/BLOX_FRUITS/610x610/ice.webp", 
 
-{ name:"Diamond", rarity:"Rare", tags:["Defense","Tank","Low Demand"], price:0.70, details:"Damage reduction fruit", img:'https://blox-fruits.fandom.com/wiki/Special:FilePath/Diamond.png', stock:5, inStock:true },
-{ name:"Light", rarity:"Rare", tags:["Speed","Grinding","Popular"], price:0.50, details:"Fast travel and attacks", img:'https://blox-fruits.fandom.com/wiki/Special:FilePath/Light.png', stock:5, inStock:true },
-{ name:"Rubber", rarity:"Rare", tags:["Immunity","Fun","PvP"], price:0.70, details:"Stretchy attacks", img:'https://blox-fruits.fandom.com/wiki/Special:FilePath/Rubber.png', stock:5, inStock:true },
-{ name:"Barrier", rarity:"Rare", tags:["Defense","Utility","Niche"], price:0.80, details:"Create barriers", img:'https://blox-fruits.fandom.com/wiki/Special:FilePath/Barrier.png', stock:5, inStock:true },
-{ name:"Ghost", rarity:"Rare", tags:["Summon","Utility","Unique"], price:0.85, details:"Summon ghost allies", img:'https://blox-fruits.fandom.com/wiki/Special:FilePath/Ghost.png', stock:5, inStock:true },
+stock:6, inStock:true },
 
-{ name:"Magma", rarity:"Legendary", tags:["Grinding","High Damage","Popular"], price:0.70, details:"Strong magma attacks", img:'https://blox-fruits.fandom.com/wiki/Special:FilePath/Magma.png', stock:5, inStock:true },
-{ name:"Quake", rarity:"Legendary", tags:["AoE","PvP","Cheap"], price:1.00, details:"Earthquake attacks", img:'https://blox-fruits.fandom.com/wiki/Special:FilePath/Quake.png', stock:5, inStock:true },
-{ name:"Buddha", rarity:"Legendary", tags:["Grinding","High Demand","Meta"], price:2.50, details:"Best for farming", img:'https://blox-fruits.fandom.com/wiki/Special:FilePath/Buddha.png', stock:5, inStock:true },
-{ name:"Love", rarity:"Legendary", tags:["Fun","PvP","Low Demand"], price:0.80, details:"Charming attacks", img:'https://blox-fruits.fandom.com/wiki/Special:FilePath/Love.png', stock:5, inStock:true },
-{ name:"Spider", rarity:"Legendary", tags:["Combo","Skill","Mid"], price:1.00, details:"String-based combos", img:'https://blox-fruits.fandom.com/wiki/Special:FilePath/Spider.png', stock:5, inStock:true },
-{ name:"Sound", rarity:"Legendary", tags:["AoE","Support","New"], price:1.20, details:"Sound-based attacks", img:'https://blox-fruits.fandom.com/wiki/Special:FilePath/Sound.png', stock:5, inStock:true },
-{ name:"Phoenix", rarity:"Legendary", tags:["Healing","Raid","Utility"], price:1.00, details:"Regeneration and flight", img:'https://blox-fruits.fandom.com/wiki/Special:FilePath/Phoenix.png', stock:5, inStock:true },
-{ name:"Portal", rarity:"Legendary", tags:["Travel","Utility","Demand"], price:1.20, details:"Teleportation abilities", img:'https://blox-fruits.fandom.com/wiki/Special:FilePath/Portal.png', stock:5, inStock:true },
-{ name:"Rumble", rarity:"Legendary", tags:["Stun","PvP","Skill"], price:1.20, details:"Electric stun attacks", img:'https://blox-fruits.fandom.com/wiki/Special:FilePath/Rumble.png', stock:5, inStock:true },
-{ name:"Pain", rarity:"Legendary", tags:["Knockback","PvP","Niche"], price:1.10, details:"Push and repel attacks", img:'https://blox-fruits.fandom.com/wiki/Special:FilePath/Pain.png', stock:5, inStock:true },
-{ name:"Blizzard", rarity:"Legendary", tags:["AoE","Grinding","Good"], price:1.50, details:"Snowstorm attacks", img:'https://blox-fruits.fandom.com/wiki/Special:FilePath/Blizzard.png', stock:5, inStock:true },
 
-{ name:"Gravity", rarity:"Mythical", tags:["Low Demand","Heavy","Niche"], price:1.30, details:"Gravity control", img:'https://blox-fruits.fandom.com/wiki/Special:FilePath/Gravity.png', stock:5, inStock:true },
-{ name:"Dough", rarity:"Mythical", tags:["PvP","High Demand","Meta"], price:3.20, details:"Top PvP fruit", img:'https://blox-fruits.fandom.com/wiki/Special:FilePath/Dough.png', stock:5, inStock:true },
-{ name:"Shadow", rarity:"Mythical", tags:["PvP","Underrated","Add"], price:1.80, details:"Shadow attacks", img:'https://blox-fruits.fandom.com/wiki/Special:FilePath/Shadow.png', stock:5, inStock:true },
-{ name:"Venom", rarity:"Mythical", tags:["PvP","Strong","Popular"], price:2.80, details:"Poison damage fruit", img:'https://blox-fruits.fandom.com/wiki/Special:FilePath/Venom.png', stock:5, inStock:true },
-{ name:"Control", rarity:"Mythical", tags:["Rework","Rising","Trader"], price:2.00, details:"Control area abilities", img:'https://blox-fruits.fandom.com/wiki/Special:FilePath/Control.png', stock:5, inStock:true },
-{ name:"Spirit", rarity:"Mythical", tags:["Balanced","Stable","Trade"], price:3.00, details:"Summon spirits", img:'https://blox-fruits.fandom.com/wiki/Special:FilePath/Spirit.png', stock:5, inStock:true },
-{ name:"Mammoth", rarity:"Mythical", tags:["Tank","Beast","Strong"], img:'https://blox-fruits.fandom.com/wiki/Special:FilePath/Mammoth.png', price:2.50, details:"Beast transformation", stock:5, inStock:true },
-{ name:"T-Rex", rarity:"Mythical", tags:["PvP","Beast","Popular"], price:2.60, details:"Dinosaur transformation", img:'https://blox-fruits.fandom.com/wiki/Special:FilePath/T-Rex.png', stock:5, inStock:true },
-{ name:"Leopard", rarity:"Mythical", tags:["PvP","High Demand","Meta"], price:4.00, details:"Fast beast attacks", img:'https://blox-fruits.fandom.com/wiki/Special:FilePath/Leopard.png', stock:5, inStock:true },
-{ name:"Dragon", rarity:"Mythical", tags:["Rare","Hype","High Demand"], price:5.00, details:"Dragon transformation", img:'https://blox-fruits.fandom.com/wiki/Special:FilePath/Dragon.png', stock:5, inStock:true },
-{ name:"Kitsune", rarity:"Mythical", tags:["Top Tier","Meta","Overpay"], price:6.00, details:"Best fruit currently", img:'https://blox-fruits.fandom.com/wiki/Special:FilePath/Kitsune.png', stock:5, inStock:true },
+{ name:"Diamond", rarity:"Rare", tags:["Defense","Tank","Low Demand"], price:0.70, details:"Damage reduction fruit", img:"https://cdn.starpets.gg/BLOX_FRUITS/610x610/diamond.webp",
+
+ stock:4, inStock:true },
+
+
+{ name:"Light", rarity:"Rare", tags:["Speed","Grinding","Popular"], price:0.50, details:"Fast travel and attacks", img:"https://cdn.starpets.gg/BLOX_FRUITS/610x610/light.webp",
+
+ stock:3, inStock:true },
+
+
+{ name:"Rubber", rarity:"Rare", tags:["Immunity","Fun","PvP"], price:0.70, details:"Stretchy attacks", img:"https://cdn.starpets.gg/BLOX_FRUITS/610x610/rubber.webp",
+
+ stock:6, inStock:true },
+
+
+{ name:"Ghost", rarity:"Rare", tags:["Summon","Utility","Unique"], price:0.85, details:"Summon ghost allies", img:"https://cdn.starpets.gg/BLOX_FRUITS/610x610/ghost.webp",
+
+ stock:5, inStock:true },
 
 
 
-{
-  name: "Buddha",
-  rarity: "Legendary",
-  tags: ["Grinding","High Demand","Meta"],
-  price: 2.50,
-  details: "Best for farming and tanking damage",
-  img: "https://cdn.starpets.gg/BLOX_FRUITS/610x610/buddha.webp",
-  stock: 5,
-  inStock: true
-}
+{ name:"Magma", rarity:"Legendary", tags:["Grinding","High Damage","Popular"], price:0.70, details:"Strong magma attacks", img:"https://cdn.starpets.gg/BLOX_FRUITS/610x610/magma.webp",
+
+ stock:1, inStock:true },
+
+
+{ name:"Quake", rarity:"Legendary", tags:["AoE","PvP","Cheap"], price:1.00, details:"Earthquake attacks", img:"https://cdn.starpets.gg/BLOX_FRUITS/610x610/quake.webp",
+
+ stock:5, inStock:false },
+
+
+{ name:"Buddha", rarity:"Legendary", tags:["Grinding","High Demand","Meta"], price:2.50, details:"Best for farming", img:"https://cdn.starpets.gg/BLOX_FRUITS/610x610/buddha.webp",
+
+ stock:5, inStock:false },
+
+
+{ name:"Love", rarity:"Legendary", tags:["Fun","PvP","Low Demand"], price:0.80, details:"Charming attacks", img:"https://cdn.starpets.gg/BLOX_FRUITS/610x610/love.webp",
+
+ stock:5, inStock:true },
+
+
+{ name:"Spider", rarity:"Legendary", tags:["Combo","Skill","Mid"], price:1.00, details:"String-based combos", img:"https://cdn.starpets.gg/BLOX_FRUITS/610x610/spider.webp",
+
+ stock:3, inStock:true },
+
+
+{ name:"Sound", rarity:"Legendary", tags:["AoE","Support","New"], price:1.20, details:"Sound-based attacks", img:"https://cdn.starpets.gg/BLOX_FRUITS/610x610/sound.webp",
+
+ stock:1, inStock:true },
+
+
+{ name:"Phoenix", rarity:"Legendary", tags:["Healing","Raid","Utility"], price:1.00, details:"Regeneration and flight", img:"https://cdn.starpets.gg/BLOX_FRUITS/610x610/phoenix.webp",
+
+ stock:2, inStock:true },
+
+
+{ name:"Portal", rarity:"Legendary", tags:["Travel","Utility","Demand"], price:1.20, details:"Teleportation abilities", img:"https://cdn.starpets.gg/BLOX_FRUITS/610x610/portal.webp",
+
+ stock:1, inStock:false },
+
+
+{ name:"Pain", rarity:"Legendary", tags:["Knockback","PvP","Niche"], price:1.10, details:"Push and repel attacks", img:"https://cdn.starpets.gg/BLOX_FRUITS/610x610/pain.webp",
+
+ stock:1, inStock:true },
+
+
+{ name:"Blizzard", rarity:"Legendary", tags:["AoE","Grinding","Good"], price:1.50, details:"Snowstorm attacks", img:"https://cdn.starpets.gg/BLOX_FRUITS/610x610/blizzard.webp",
+
+ stock:5, inStock:false },
+
+
+{ name:"Gravity", rarity:"Mythical", tags:["Low Demand","Heavy","Niche"], price:1.30, details:"Gravity control", img:"https://cdn.starpets.gg/BLOX_FRUITS/610x610/gravity.webp",
+
+ stock:5, inStock:false },
+
+
+{ name:"Dough", rarity:"Mythical", tags:["PvP","High Demand","Meta"], price:3.20, details:"Top PvP fruit", img:"https://cdn.starpets.gg/BLOX_FRUITS/610x610/dough.webp",
+
+ stock:1, inStock:true },
+
+
+{ name:"Shadow", rarity:"Mythical", tags:["PvP","Underrated","Add"], price:1.80, details:"Shadow attacks", img:"https://cdn.starpets.gg/BLOX_FRUITS/610x610/shadow.webp",
+
+ stock:5, inStock:false },
+
+
+{ name:"Venom", rarity:"Mythical", tags:["PvP","Strong","Popular"], price:2.80, details:"Poison damage fruit", img:"https://cdn.starpets.gg/BLOX_FRUITS/610x610/venom.webp",
+
+ stock:5, inStock:false },
+
+
+{ name:"Control", rarity:"Mythical", tags:["Rework","Rising","Trader"], price:2.00, details:"Control area abilities", img:"https://cdn.starpets.gg/BLOX_FRUITS/610x610/control.webp",
+
+ stock:5, inStock:false },
+
+
+{ name:"Spirit", rarity:"Mythical", tags:["Balanced","Stable","Trade"], price:3.00, details:"Summon spirits", img:"https://cdn.starpets.gg/BLOX_FRUITS/610x610/spirit.webp",
+
+ stock:5, inStock:false },
+
+
+{ name:"Mammoth", rarity:"Mythical", tags:["Tank","Beast","Strong"], price:2.50, details:"Beast transformation", img:"https://cdn.starpets.gg/BLOX_FRUITS/610x610/mammoth.webp",
+
+ stock:5, inStock:false },
+
+
+{ name:"T-Rex", rarity:"Mythical", tags:["PvP","Beast","Popular"], price:2.60, details:"Dinosaur transformation", img:"https://cdn.starpets.gg/BLOX_FRUITS/610x610/t_rex.webp",
+
+ stock:5, inStock:false },
+
+ { name: "Creation", rarity: "Mythical", tags: ["Support","Utility","New","Creative"], price: 3.50, details: "New fruit focused on creation abilities and utility-based skills", img: "https://cdn.starpets.gg/BLOX_FRUITS/610x610/creation.webp",
+
+  stock: 3, inStock: true}
+
+
+{ name:"Leopard", rarity:"Mythical", tags:["PvP","High Demand","Meta"], price:4.00, details:"Fast beast attacks", img:"https://cdn.starpets.gg/BLOX_FRUITS/610x610/leopard.webp",
+
+ stock:5, inStock:false },
+
+
+{ name:"Dragon (West)", rarity:"Mythical", tags:["Rare","Hype","High Demand"], price:5.00, details:"Western Dragon form", img:"https://cdn.starpets.gg/BLOX_FRUITS/610x610/dragon_west.webp",
+
+ stock:5, inStock:false },
+
+
+{ name:"Dragon (East)", rarity:"Mythical", tags:["Rare","Hype","High Demand"], price:5.20, details:"Eastern Dragon form", img:"https://cdn.starpets.gg/BLOX_FRUITS/610x610/dragon_east.webp",
+
+ stock:5, inStock:false },
+
+
+{ name:"Kitsune", rarity:"Mythical", tags:["Top Tier","Meta","Overpay"], price:6.00, details:"Best fruit currently", img:"https://cdn.starpets.gg/BLOX_FRUITS/610x610/kitsune.webp",
+
+ stock:5, inStock:false }
+
 
 
 
